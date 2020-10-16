@@ -10,36 +10,36 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./donut-detail.component.css'],
 })
 export class DonutDetailComponent implements OnInit {
-  donutId = "";
-  donut:DonutDetail;
-  activatedRoute: DonutService;
-  donuts:DonutList;
+ 
+  donutDetail: DonutDetail;
+  id:number;
+  sub:any;
 
-  constructor(private Activatedroute: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
     private donutService: DonutService) { }
 
   changeDonutId(donutId) {
-    this.donutService.setDonutId(donutId);
+    this.donutService.setDonutId(this.sub);
 
     
   }
 
-  
-  @Input() id;
   ngOnInit(): void {
-
+  this.sub= this.route.params.subscribe(params =>{
+    this.id = +params['id'];
+  });
     
 
 
      //this.donutId = this.donutService.snapshot.paramMap.get('id');
-    // this.donutService.queryParams?.subscribe(params => {
-    //   this.donutId = params['item.id']; console.log(this.id);
-    // })
+    // this.donutService.queryParams.subscribe((data:Donut )=> this.donut =data );
+    
 
 
-    this.donutService.getDonut(this.donutId).subscribe((data: DonutDetail) => this.donut = data);  /// This one works. Just need to get variable into getDontu()
+    // this.donutService.getDonut(this.donut.id).subscribe((data: DonutDetail) => this.donutDetail = data);  /// This one works. Just need to get variable into getDontu()
 
  
+  }
   // }
     // });
    // this.Activatedroute.snapshot.queryParamMap.get('id')||0;;
@@ -47,4 +47,4 @@ export class DonutDetailComponent implements OnInit {
 
  
     // console.log('=================INSIDE firstNGONINIT============')
-}}
+}
