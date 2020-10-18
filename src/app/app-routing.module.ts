@@ -4,7 +4,8 @@ import { DonutDetailComponent } from './donut-detail/donut-detail.component';
 import { DonutsComponent } from './donuts/donuts.component';
 
 const routes: Routes = [
-  {path: 'donut/:id', component:DonutDetailComponent}
+  {path: 'donuts', component:DonutsComponent},
+  {path: 'donut', component:DonutDetailComponent}
 ]
 
 ;
