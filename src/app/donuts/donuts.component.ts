@@ -20,8 +20,7 @@ export class DonutsComponent implements OnInit {
     this.donutService.getDonuts().subscribe(
       (data: DonutList) => this.donuts = data
     );
-  //  this.donutService.getDonut(5).subscribe((data: DonutDetail) => this.donut = data);
-  
+
 
 
   }

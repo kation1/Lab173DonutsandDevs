@@ -20,22 +20,16 @@ export class DonutDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private donutService: DonutService) { }
 
-  // changeDonutId(donutId) {
-  //   this.donutService.setDonutId(this.sub);
-
-
-  // }
 
   ngOnInit(): void {
     {
       this.route.queryParams.subscribe((data: Donut) => this.selectedDonut = data);
       
-     console.log(this.selectedDonut)
-
+   //  console.log(this.selectedDonut)
 
       this.donutService.getDonut(this.selectedDonut.ref).subscribe((data: DonutDetail) => this.donutDetail = data);  /// This one works. Just need to get variable into getDontu()
 
-      console.log('donut-detail ngOnINit')
+     // console.log('donut-detail ngOnINit')
 
     }
 

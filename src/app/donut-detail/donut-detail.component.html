@@ -1,4 +1,15 @@
-<p>donut-detail works!</p>
-{{donutDetail.name}}
-{{donutDetail.}}
+<br>
+
+<img src="{{donutDetail.photo}}" alt="{{donutDetail.photo_attribution}}"style="width:500px;height:500px;">
+<ul>
+   <li>{{donutDetail.name}}</li>
+   <li>{{donutDetail.calories}}</li> 
+   <div *ngFor= 'let item of donutDetail.extras'>
+
+        <li>{{item}}</li>
+   </div>
+    </ul>
+
+
+   
 

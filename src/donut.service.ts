@@ -9,7 +9,7 @@ import { Url } from 'url';
 
 })
 export class DonutService {
-ref:Url;
+
   constructor(private http: HttpClient) { }
   getDonuts() {
     return this.http.get<DonutList>('https://grandcircusco.github.io/demo-apis/donuts.json')
